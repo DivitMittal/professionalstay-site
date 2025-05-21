@@ -1,0 +1,39 @@
+jobs:
+  checking-flake:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@main
+      with:
+        fetch-depth: 1
+    - id: set_base_url
+      name: Set Base URL based on branch
+      run: "if [[ \"${{ github.ref_name }}\" == \"master\" ]]; then\n  echo \"BASE_URL=https://www.divit.qezta.com/\"\
+        \ >> $GITHUB_ENV\nelif [[ \"${{ github.ref_name }}\" == \"dev-qezta\" ]];\
+        \ then\n  echo \"BASE_URL=https://www.qezta.com/\" >> $GITHUB_ENV\nelse\n\
+        \  echo \"Unknown branch: ${{ github.ref_name }}\"\n  exit 1\nfi\n"
+    - name: Generate the sitemap
+      uses: cicirello/generate-sitemap@v1
+      with:
+        base-url-path: ${{ env.BASE_URL }}
+        sitemap-path: static/sitemap.xml
+    - name: Commit and push sitemap
+      run: "if [[ `git status --porcelain static/sitemap.xml` ]]; then\n  git config\
+        \ --global user.name 'github-actions'\n  git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'\n\
+        \  git add static/sitemap.xml\n  git commit -m \"Automated sitemap update\
+        \ for ${{ github.ref_name }}\" static/sitemap.xml\n  git push\nelse\n  echo\
+        \ \"No changes to sitemap.xml\"\nfi "
+    timeout-minutes: 30
+'on':
+  pull_request:
+    branches:
+    - master
+    - dev-qezta
+  push:
+    branches:
+    - master
+    - dev-qezta
+    paths-ignore:
+    - '**/*.md'
+    - .github/**
+  workflow_dispatch: {}
