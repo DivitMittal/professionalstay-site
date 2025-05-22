@@ -1,5 +1,3 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # dependencies
 /node_modules
 
@@ -29,3 +27,6 @@ next-env.d.ts
 # nix
 result
 .direnv
+
+# macOS
+.DS_Store
