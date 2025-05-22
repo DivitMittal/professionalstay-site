@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { smoothScroll } from "@/utils/smoothScroll"
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { smoothScroll } from "@/utils/smoothScroll";
 
 export function Hero() {
   return (
@@ -12,16 +12,21 @@ export function Hero() {
         <div className="flex flex-wrap items-center -mx-4">
           <div className="w-full lg:w-1/2 px-4 mb-12 lg:mb-0">
             <h1 className="mb-6 text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-              <span className="text-foreground">Professional</span> <span className="text-primary">Property</span>{" "}
+              <span className="text-foreground">Professional</span>{" "}
+              <span className="text-primary">Property</span>{" "}
               <span className="text-secondary">Management</span>
             </h1>
             <p className="mb-8 text-lg text-muted-foreground">
-              Maximize your property's potential with our comprehensive management services. We handle everything from
-              tenant screening to maintenance, so you don't have to.
+              Maximize your property's potential with our comprehensive
+              management services. We handle everything from tenant screening to
+              maintenance, so you don't have to.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/properties" passHref>
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold">
+                <Button
+                  size="lg"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold"
+                >
                   View Properties
                 </Button>
               </Link>
@@ -53,6 +58,5 @@ export function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-

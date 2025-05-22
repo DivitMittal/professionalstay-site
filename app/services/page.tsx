@@ -1,16 +1,25 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Building2, Shield, Users, Wrench, Banknote, FileCheck } from "lucide-react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Building2,
+  Shield,
+  Users,
+  Wrench,
+  Banknote,
+  FileCheck,
+} from "lucide-react";
 
 const services = [
   {
     icon: Building2,
     title: "Property Management",
-    description: "Comprehensive property management including tenant screening, rent collection, and maintenance.",
+    description:
+      "Comprehensive property management including tenant screening, rent collection, and maintenance.",
   },
   {
     icon: Users,
     title: "Tenant Relations",
-    description: "Professional tenant communication and support for smooth operations.",
+    description:
+      "Professional tenant communication and support for smooth operations.",
   },
   {
     icon: Wrench,
@@ -20,19 +29,22 @@ const services = [
   {
     icon: Shield,
     title: "Legal Compliance",
-    description: "Ensuring all properties meet legal requirements and regulations.",
+    description:
+      "Ensuring all properties meet legal requirements and regulations.",
   },
   {
     icon: Banknote,
     title: "Financial Management",
-    description: "Detailed financial reporting, rent collection, and expense tracking.",
+    description:
+      "Detailed financial reporting, rent collection, and expense tracking.",
   },
   {
     icon: FileCheck,
     title: "Documentation",
-    description: "Complete handling of all property-related documentation and contracts.",
+    description:
+      "Complete handling of all property-related documentation and contracts.",
   },
-]
+];
 
 export default function ServicesPage() {
   return (
@@ -43,7 +55,7 @@ export default function ServicesPage() {
       </p>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {services.map((service, index) => {
-          const Icon = service.icon
+          const Icon = service.icon;
           return (
             <Card key={index}>
               <CardHeader>
@@ -54,10 +66,9 @@ export default function ServicesPage() {
                 <p className="text-muted-foreground">{service.description}</p>
               </CardContent>
             </Card>
-          )
+          );
         })}
       </div>
     </div>
-  )
+  );
 }
-

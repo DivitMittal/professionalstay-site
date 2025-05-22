@@ -1,6 +1,11 @@
-import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import Image from "next/image"
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const properties = [
   {
@@ -25,12 +30,14 @@ const properties = [
     image:
       "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
   },
-]
+];
 
 export default function PropertiesPage() {
   return (
     <div className="container py-10">
-      <h1 className="text-4xl font-bold mb-8">Available Properties in Jaipur</h1>
+      <h1 className="text-4xl font-bold mb-8">
+        Available Properties in Jaipur
+      </h1>
       <div className="grid gap-6 md:grid-cols-2">
         {properties.map((property) => (
           <Card key={property.id} className="overflow-hidden">
@@ -48,7 +55,9 @@ export default function PropertiesPage() {
             <CardContent className="p-4">
               <h3 className="text-xl font-semibold mb-2">{property.title}</h3>
               <p className="text-muted-foreground mb-2">{property.location}</p>
-              <p className="text-lg font-bold text-accent mb-4">{property.price}</p>
+              <p className="text-lg font-bold text-accent mb-4">
+                {property.price}
+              </p>
               <div className="grid grid-cols-3 gap-4 text-sm">
                 <div>
                   <p className="font-semibold">{property.beds}</p>
@@ -65,12 +74,13 @@ export default function PropertiesPage() {
               </div>
             </CardContent>
             <CardFooter className="p-4 pt-0">
-              <Button className="w-full bg-primary hover:bg-primary/90 text-white">View Details</Button>
+              <Button className="w-full bg-primary hover:bg-primary/90 text-white">
+                View Details
+              </Button>
             </CardFooter>
           </Card>
         ))}
       </div>
     </div>
-  )
+  );
 }
-

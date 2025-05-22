@@ -1,24 +1,24 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import Link from "next/link"
-import { useTheme } from "next-themes"
-import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu, Moon, Sun } from "lucide-react"
-import { useState } from "react"
-import { smoothScroll } from "@/utils/smoothScroll"
+import Image from "next/image";
+import Link from "next/link";
+import { useTheme } from "next-themes";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Menu, Moon, Sun } from "lucide-react";
+import { useState } from "react";
+import { smoothScroll } from "@/utils/smoothScroll";
 
 export function Nav() {
-  const { theme, setTheme } = useTheme()
-  const [isOpen, setIsOpen] = useState(false)
+  const { theme, setTheme } = useTheme();
+  const [isOpen, setIsOpen] = useState(false);
 
   const links = [
     { href: "/#services", label: "Services" },
     { href: "/#about", label: "About" },
     { href: "/properties", label: "Properties" },
     { href: "/#contact", label: "Contact" },
-  ]
+  ];
 
   return (
     <nav className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -31,7 +31,9 @@ export function Nav() {
             height={40}
             className="w-auto h-8"
           />
-          <span className="font-semibold text-xl text-foreground">Professional Stay</span>
+          <span className="font-semibold text-xl text-foreground">
+            Professional Stay
+          </span>
         </Link>
 
         <div className="flex items-center gap-4">
@@ -41,7 +43,11 @@ export function Nav() {
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             className="text-primary hover:text-primary/80"
           >
-            {theme === "light" ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
+            {theme === "light" ? (
+              <Moon className="h-5 w-5" />
+            ) : (
+              <Sun className="h-5 w-5" />
+            )}
           </Button>
 
           <div className="hidden md:flex items-center gap-6">
@@ -52,7 +58,7 @@ export function Nav() {
                 className="text-sm font-medium text-foreground hover:text-primary transition-colors"
                 onClick={(e) => {
                   if (link.href.startsWith("/#")) {
-                    smoothScroll(e, link.href.substring(2))
+                    smoothScroll(e, link.href.substring(2));
                   }
                 }}
               >
@@ -75,9 +81,9 @@ export function Nav() {
                     href={link.href}
                     className="text-sm font-medium text-foreground hover:text-primary transition-colors"
                     onClick={(e) => {
-                      setIsOpen(false)
+                      setIsOpen(false);
                       if (link.href.startsWith("/#")) {
-                        smoothScroll(e, link.href.substring(2))
+                        smoothScroll(e, link.href.substring(2));
                       }
                     }}
                   >
@@ -90,6 +96,5 @@ export function Nav() {
         </div>
       </div>
     </nav>
-  )
+  );
 }
-
