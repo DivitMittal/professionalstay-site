@@ -29,6 +29,9 @@ jobs:
     branches:
     - master
     - dev-qezta
+    paths-ignore:
+    - '**/*.md'
+    - .github/**
   push:
     branches:
     - master
