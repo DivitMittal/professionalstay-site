@@ -1,32 +1,36 @@
-# dependencies
+## dependencies
 /node_modules
 
-# next.js
+## next.js
 /.next/
 /out/
 
-# production
+## production
 /build
 
-# debug
+## debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files
+## env files
 .env
 
-# vercel
+## vercel
 .vercel
 
-# typescript
+## typescript
 *.tsbuildinfo
 next-env.d.ts
 
-# nix
+## nix
+result-*
 result
 .direnv
 
-# macOS
-.DS_Store
+## macOS
+**/.DS_Store
+
+## git pre-commit hooks (handled via cachix/git-hooks)
+.pre-commit-config.yaml
