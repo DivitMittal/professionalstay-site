@@ -1,5 +1,5 @@
 {
-  description = "ProfessionalStay site's flake";
+  description = "ProfessionalStay-Site's flake";
 
   outputs = inputs: let
     inherit (inputs.flake-parts.lib) mkFlake;
