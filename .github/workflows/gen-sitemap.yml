@@ -8,10 +8,7 @@ jobs:
         fetch-depth: 1
     - id: set_base_url
       name: Set Base URL based on branch
-      run: "if [[ \"${{ github.ref_name }}\" == \"master\" ]]; then\n  echo \"BASE_URL=https://www.divit.qezta.com/\"\
-        \ >> $GITHUB_ENV\nelif [[ \"${{ github.ref_name }}\" == \"dev-qezta\" ]];\
-        \ then\n  echo \"BASE_URL=https://www.qezta.com/\" >> $GITHUB_ENV\nelse\n\
-        \  echo \"Unknown branch: ${{ github.ref_name }}\"\n  exit 1\nfi\n"
+      run: echo "BASE_URL=https://www.professionalstay.in/" >> $GITHUB_ENV
     - name: Generate the sitemap
       uses: cicirello/generate-sitemap@v1
       with:
@@ -28,14 +25,12 @@ jobs:
   pull_request:
     branches:
     - master
-    - dev-qezta
     paths-ignore:
     - '**/*.md'
     - .github/**
   push:
     branches:
     - master
-    - dev-qezta
     paths-ignore:
     - '**/*.md'
     - .github/**
