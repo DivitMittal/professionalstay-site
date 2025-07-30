@@ -23,8 +23,10 @@
           inherit
             (pkgs)
             ### LSPs & Formatters
+            ## Nix
             nixd
             alejandra
+            ## Web-dev
             vscode-langservers-extracted
             emmet-language-server
             typescript-language-server
