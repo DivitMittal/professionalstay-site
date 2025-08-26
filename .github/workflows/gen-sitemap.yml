@@ -15,11 +15,16 @@ jobs:
         base-url-path: ${{ env.BASE_URL }}
         sitemap-path: static/sitemap.xml
     - name: Commit and push sitemap
-      run: "if [[ `git status --porcelain static/sitemap.xml` ]]; then\n  git config\
-        \ --global user.name 'github-actions'\n  git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'\n\
-        \  git add static/sitemap.xml\n  git commit -m \"Automated sitemap update\
-        \ for ${{ github.ref_name }}\" static/sitemap.xml\n  git push\nelse\n  echo\
-        \ \"No changes to sitemap.xml\"\nfi "
+      run: |-
+        if [[ `git status --porcelain static/sitemap.xml` ]]; then
+          git config --global user.name 'github-actions'
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add static/sitemap.xml
+          git commit -m "Automated sitemap update for ${{ github.ref_name }}" static/sitemap.xml
+          git push
+        else
+          echo "No changes to sitemap.xml"
+        fi
     timeout-minutes: 30
 'on':
   pull_request:
