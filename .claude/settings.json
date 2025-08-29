@@ -1,4 +1,4 @@
 {
-  "enabledMcpjsonServers": ["serena"],
+  "enabledMcpjsonServers": ["serena", "playwright"],
   "enableAllProjectMcpServers": true
 }

@@ -1,9 +1,27 @@
 {
   "mcpServers": {
-    "serena": {
+    "playwright": {
       "type": "stdio",
       "command": "pnpm",
-      "args": ["dlx", "@playwright/mcp"],
+      "args": [
+        "dlx",
+        "@playwright/mcp"
+      ],
+      "env": {}
+    },
+    "serena": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/oraios/serena",
+        "serena",
+        "start-mcp-server",
+        "--context",
+        "ide-assistant",
+        "--project",
+        "/Users/div/Projects/professionalstay-site"
+      ],
       "env": {}
     }
   }
