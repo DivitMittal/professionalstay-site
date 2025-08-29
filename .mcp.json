@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "serena": {
+      "type": "stdio",
+      "command": "pnpm",
+      "args": ["dlx", "@playwright/mcp"],
+      "env": {}
+    }
+  }
+}
