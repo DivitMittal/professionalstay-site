@@ -20,7 +20,7 @@
         "--context",
         "ide-assistant",
         "--project",
-        "/Users/div/Projects/professionalstay-site"
+        "~/Projects/professionalstay-site"
       ],
       "env": {}
     }
