@@ -1,14 +1,5 @@
 {
   "mcpServers": {
-    "playwright": {
-      "type": "stdio",
-      "command": "pnpm",
-      "args": [
-        "dlx",
-        "@playwright/mcp"
-      ],
-      "env": {}
-    },
     "serena": {
       "type": "stdio",
       "command": "uvx",
@@ -22,6 +13,12 @@
         "--project",
         "~/Projects/professionalstay-site"
       ],
+      "env": {}
+    },
+    "playwright": {
+      "type": "stdio",
+      "command": "pnpm",
+      "args": ["dlx", "@playwright/mcp"],
       "env": {}
     }
   }
