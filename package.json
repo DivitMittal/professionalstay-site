@@ -45,7 +45,7 @@
     "embla-carousel-react": "8.5.1",
     "input-otp": "1.4.1",
     "lucide-react": "^0.454.0",
-    "next": "15.2.4",
+    "next": "15.5.19",
     "next-themes": "latest",
     "react": "^19",
     "react-day-picker": "8.10.1",
@@ -57,7 +57,7 @@
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^0.9.6",
-    "zod": "latest"
+    "zod": "^3.25.76"
   },
   "devDependencies": {
     "@types/node": "^22",
